@@ -1,30 +1,26 @@
-// Exercise: AJAX Request Handler and Error Handler (Parts 9 & 10)
 
 /*
-|--------------------------------------------------------------------------
-| Core Asynchronous Fetch Function
-|--------------------------------------------------------------------------
 | Handles fetching, parsing, success, and error handling for any given URL.
 */
 async function fetchData(url) {
     const outputDiv = document.getElementById('output');
     
-    // Loading indicator (Optional - if time)
+    // Loading indicator 
     outputDiv.innerHTML = '<div class="loading-indicator">Loading data...</div>'; 
 
     try {
-        // 1. Fetch data from the specified URL
+        //  Fetch data from the specified URL
         const response = await fetch(url);
 
-        // 2. Check for HTTP errors (e.g., 404 Not Found) (Part 4: Error Handling)
+        //  Check for HTTP errors 
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`);
         }
 
-        // 3. Parse the JSON response (Part 3)
+        //  Parse the JSON response 
         const data = await response.json();
         
-        // 4. Display the data (Success Case) (Part 3)
+        //  Display the data (Success Case) 
         console.log("JSON Data Loaded:", data);
         
         // Convert the object back to a nicely formatted JSON string for display
@@ -36,7 +32,7 @@ async function fetchData(url) {
         `;
         
     } catch (error) {
-        // 5. Display appropriate error messages to the user (Part 4: Error Handling)
+        // Display appropriate error messages to the user (Part 4: Error Handling)
         console.error("AJAX Request Failed:", error);
 
         outputDiv.innerHTML = `
@@ -51,23 +47,21 @@ async function fetchData(url) {
 }
 
 /*
-|--------------------------------------------------------------------------
-| Event Listeners and Setup
-|--------------------------------------------------------------------------
+    Event Listeners and Setup
 */
 document.addEventListener('DOMContentLoaded', () => {
     // Get the button elements
     const loadDataBtn = document.getElementById('load-data-btn');
     const loadErrorBtn = document.getElementById('load-error-btn');
     
-    // Success Case: Loads the existing JSON file when button is clicked
+    // Success Case
     if (loadDataBtn) {
         loadDataBtn.addEventListener('click', () => {
             fetchData('travel-data.json');
         });
     }
 
-    // Error Case: Attempts to load a non-existent file when button is clicked
+    // Error Case
     if (loadErrorBtn) {
         loadErrorBtn.addEventListener('click', () => {
             fetchData('non-existent-file.json'); 
