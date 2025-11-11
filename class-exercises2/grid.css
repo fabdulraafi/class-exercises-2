@@ -1,0 +1,59 @@
+
+/* main page grid */
+
+/*
+    container to wrap the header, also top level container displays as grid
+*/
+.page-wrapper {
+    display: grid;
+    /* defines the layout grid
+    */
+    grid-template-areas:
+        "header header"
+        "nav    main"
+        "footer footer";
+    /* 
+        defines two columns, one fixed-width column for nav and flexible column for content
+    */
+    grid-template-columns: 200px 1fr;
+   
+    /* general changes to adjust negative spaces, and improve the layout    */ 
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    border: 1px solid #ddd;
+}
+
+/* assigning areas to the main grid children, assigns to the header area */
+.page-header {
+    grid-area: header;
+}
+
+/* assigns class to the nav area */
+.main-navigation {
+    grid-area: nav;
+    padding: 15px; 
+    background-color: #e6e6fa; 
+}
+
+/* assigns class to the main area */
+.main-content {
+    grid-area: main;
+    padding: 20px; 
+
+    display: grid;
+    /* 
+        creates two rows, controls on top, output below
+    */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px; 
+}
+
+/* assigns class to the footer area */
+.page-footer {
+    grid-area: footer;
+    text-align: center; 
+}
+

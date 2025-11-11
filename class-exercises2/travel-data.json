@@ -1,0 +1,24 @@
+{
+    "name": "Kyoto, Japan",
+    "country": "Japan",
+    "attractions": [
+        "Fushimi Inari Shrine",
+        "Arashiyama Bamboo Grove",
+        "Kinkaku-ji (Golden Pavilion)"
+    ],
+    "weather": {
+        "spring": {
+            "temperature": 15,
+            "conditions": "Mild, Chance of Rain"
+        },
+        "summer": {
+            "temperature": 28,
+            "conditions": "Hot and Humid"
+        },
+        "winter": {
+            "temperature": 5,
+            "conditions": "Cool and Dry, Chance of Snow"
+        }
+    },
+    "visited": true
+}

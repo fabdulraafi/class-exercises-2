@@ -1,0 +1,56 @@
+/*
+    defining the specific breakpoints for tablet and mobile
+    the default layut definied in grid.css remains the desktop view
+*/
+
+/* tablet view */
+@media (max-width: 768px) {
+    
+    /*
+    * Targets the main structural container.
+    */
+    .page-wrapper {
+        /*
+            navigation stacks above each other, and we've switched layout from two column to single column layout
+        */
+        grid-template-columns: 1fr; 
+        
+        /* 
+            changing layouts to stack vertically
+        */
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+            
+        max-width: 90%; 
+    }
+    
+    /* navigation changes */
+    .main-navigation {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+/* mobile layout */
+@media (max-width: 480px) {
+    
+    /*
+        layout remains one column, same as tablet, but we've made changes margins
+    */
+    .page-wrapper {
+        margin: 0; 
+        max-width: 100%; 
+    }
+    
+    .main-content {
+        gap: 10px; /* Reduce gap spacing */
+    }
+
+    .flex-item {
+        /* making changes in margins  */
+        flex: 0 0 100%; 
+        margin-right: 0; 
+    }
+}

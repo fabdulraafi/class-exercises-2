@@ -1,0 +1,136 @@
+
+/* 1. Base Styles and Inheritance (Lowest Specificity) */
+
+/*
+* applying global rules
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+* defining core inheritence properties : font color, font family, etc
+* these properties will get inherited by all the content in the body section 
+*/
+body {
+    font-family: sans-serif; 
+    background-color: #f0f0f0; 
+    color: #333; 
+    line-height: 1.6; 
+    padding: 0; 
+    margin: 0;
+}
+
+/* 2. Layout Structure (Element/Class Specificity) */
+
+/*
+    main content wrapper
+*/
+.project-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*
+    targets the header content
+*/
+.content-header {
+    background-color: #3498db;
+    color: white; /* Explicitly overrides inherited 'color' (#333) for contrast */
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/*
+    targets the content area
+*/
+.content-area {
+    padding: 10px 0;
+}
+
+/* 3. High Specificity (ID and Complex Selectors) */
+
+
+#main-title {
+    font-size: 1.8em;
+}
+
+/*
+    footer styling
+*/
+.content-footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #7f8c8d; 
+    font-size: 0.85em; 
+}
+
+
+/*
+    control elements
+*/
+.options-controls {
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px dashed #bdc3c7;
+    display: flex;
+    gap: 10px;
+}
+
+/* 
+    parent flex container 
+*/
+.content-output {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    row-gap: 15px;
+    
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #2ecc71;
+}
+
+/* 
+    changes the color of the link which would be set to default otherwise 
+*/
+.options-controls a {
+    color: #2980b9; 
+}
+
+/* 
+    flex items
+*/
+.flex-item {
+    
+    flex: 0 0 48%; 
+
+    margin-right: 2%; 
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    background-color: #f7f7f7;
+}
+
+/* AJAX/Loading indicator styles */
+.loading-indicator {
+    padding: 10px;
+    background-color: #ffe0b2;
+    color: #e65100;
+    text-align: center;
+}
+#output pre {
+    white-space: pre-wrap;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
